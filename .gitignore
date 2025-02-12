@@ -1,0 +1,21 @@
+# Excludes optional components of Vim configuration from:
+# <https://github.com/mikobartnicki/vimfiles>
+#
+# This file is not a replacement of proper .gitignore for Vim!
+#
+# Latest revision: 2025-02-12
+#
+# Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
+# please read UNLICENSE file for details.
+
+# local colorschemes
+colors/
+
+# local indentation rules
+indent/
+
+# local plugins
+plugin/
+
+# local spellcheck dictionaries
+spell/
