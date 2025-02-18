@@ -6,22 +6,14 @@ on:
 
 jobs:
   test-vimrc:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Test vimrc
-        run: vim -u ./vimrc -e -c 'q'
+    uses: ./.github/workflows/test_vim_config.yaml
+    with:
+      vim_config_file: "./vimrc"
 
   test-gvimrc:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Test gvimrc
-        run: vim -u ./gvimrc -e -c 'q'
+    uses: ./.github/workflows/test_vim_config.yaml
+    with:
+      vim_config_file: "./gvimrc"
 
   test-polish-spell:
     runs-on: ubuntu-latest
