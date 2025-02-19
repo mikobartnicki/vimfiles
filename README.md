@@ -74,7 +74,7 @@ following script:
 This script downloads and locally installs the [Smart Tabs][00] plugin made by
 Michael Geddes. Although this plugin has not been maintained for many years, it
 still works more or less. However, be aware that it causes <kbd>Backspace</kbd>
-misbehavior when used together with `softtabstop` option.
+key misbehavior when used together with `softtabstop` option.
 
 ## Author
 
