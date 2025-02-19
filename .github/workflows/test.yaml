@@ -16,121 +16,25 @@ jobs:
       vim_config_file: "./gvimrc"
 
   test-polish-spell:
-    runs-on: ubuntu-latest
-    env:
-      SCRIPT_NAME: "./polish_spell"
-      RESULT_FILE: "./spell/pl.utf-8.spl"
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Remove existing previous result file (if any)
-        run: rm -f "$RESULT_FILE"
-
-      - name: Make script executable
-        run: |
-          chmod +x "$SCRIPT_NAME"
-
-      - name: Execute script
-        run: |
-          "$SCRIPT_NAME"
-          echo "Exited with code: $?"
-
-      - name: Check the result
-        run: |
-          if [ -f "$RESULT_FILE" ]; then
-            echo "$RESULT_FILE created successfully."
-          else
-            echo "$RESULT_FILE was not created!" >&2
-            exit 1
-          fi
+    uses: ./.github/workflows/test_bash_script.yaml
+    with:
+      script_name: "./polish_spell"
+      result_file: "./spell/pl.utf-8.spl"
 
   test-retrobox-scheme:
-    runs-on: ubuntu-latest
-    env:
-      SCRIPT_NAME: "./retrobox_scheme"
-      RESULT_FILE: "./colors/retrobox.vim"
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Remove existing previous result file (if any)
-        run: rm -f "$RESULT_FILE"
-
-      - name: Make script executable
-        run: |
-          chmod +x "$SCRIPT_NAME"
-
-      - name: Execute script
-        run: |
-          "$SCRIPT_NAME"
-          echo "Exited with code: $?"
-
-      - name: Check the result
-        run: |
-          if [ -f "$RESULT_FILE" ]; then
-            echo "$RESULT_FILE created successfully."
-          else
-            echo "$RESULT_FILE was not created!" >&2
-            exit 1
-          fi
+    uses: ./.github/workflows/test_bash_script.yaml
+    with:
+      script_name: "./retrobox_scheme"
+      result_file: "./colors/retrobox.vim"
 
   test-shell-indent:
-    runs-on: ubuntu-latest
-    env:
-      SCRIPT_NAME: "./shell_indent"
-      RESULT_FILE: "./indent/sh.vim"
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Remove existing previous result file (if any)
-        run: rm -f "$RESULT_FILE"
-
-      - name: Make script executable
-        run: |
-          chmod +x "$SCRIPT_NAME"
-
-      - name: Execute script
-        run: |
-          "$SCRIPT_NAME"
-          echo "Exited with code: $?"
-
-      - name: Check the result
-        run: |
-          if [ -f "$RESULT_FILE" ]; then
-            echo "$RESULT_FILE created successfully."
-          else
-            echo "$RESULT_FILE was not created!" >&2
-            exit 1
-          fi
+    uses: ./.github/workflows/test_bash_script.yaml
+    with:
+      script_name: "./shell_indent"
+      result_file: "./indent/sh.vim"
 
   test-smart-tabs:
-    runs-on: ubuntu-latest
-    env:
-      SCRIPT_NAME: "./smart_tabs"
-      RESULT_FILE: "./plugin/smart_tabs.vim"
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Remove existing previous result file (if any)
-        run: rm -f "$RESULT_FILE"
-
-      - name: Make script executable
-        run: |
-          chmod +x "$SCRIPT_NAME"
-
-      - name: Execute script
-        run: |
-          "$SCRIPT_NAME"
-          echo "Exited with code: $?"
-
-      - name: Check the result
-        run: |
-          if [ -f "$RESULT_FILE" ]; then
-            echo "$RESULT_FILE created successfully."
-          else
-            echo "$RESULT_FILE was not created!" >&2
-            exit 1
-          fi
+    uses: ./.github/workflows/test_bash_script.yaml
+    with:
+      script_name: "./smart_tabs"
+      result_file: "./plugin/smart_tabs.vim"
