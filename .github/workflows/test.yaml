@@ -6,14 +6,14 @@ on:
 
 jobs:
   test-vimrc:
-    uses: ./.github/workflows/test_vim_config.yaml
+    uses: mikobartnicki/actions/.github/workflows/command_test.yaml@main
     with:
-      vim_config_file: "./vimrc"
+      command_to_test: vim -u ./vimrc -e -c 'q'
 
   test-gvimrc:
-    uses: ./.github/workflows/test_vim_config.yaml
+    uses: mikobartnicki/actions/.github/workflows/command_test.yaml@main
     with:
-      vim_config_file: "./gvimrc"
+      command_to_test: vim -u ./gvimrc -e -c 'q'
 
   test-polish-spell:
     uses: ./.github/workflows/test_bash_script.yaml
