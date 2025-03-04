@@ -6,35 +6,35 @@ on:
 
 jobs:
   test-vimrc:
-    uses: mikobartnicki/actions/.github/workflows/command_test.yaml@main
+    uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
       command_to_test: vim -u ./vimrc -e -c 'q'
 
   test-gvimrc:
-    uses: mikobartnicki/actions/.github/workflows/command_test.yaml@main
+    uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
       command_to_test: vim -u ./gvimrc -e -c 'q'
 
   test-polish-spell:
-    uses: ./.github/workflows/test_bash_script.yaml
+    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
     with:
-      script_name: "./polish_spell"
-      result_file: "./spell/pl.utf-8.spl"
+      script_to_test: "./polish_spell"
+      result_file_to_check: "./spell/pl.utf-8.spl"
 
   test-retrobox-scheme:
-    uses: ./.github/workflows/test_bash_script.yaml
+    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
     with:
-      script_name: "./retrobox_scheme"
-      result_file: "./colors/retrobox.vim"
+      script_to_test: "./retrobox_scheme"
+      result_file_to_check: "./colors/retrobox.vim"
 
   test-shell-indent:
-    uses: ./.github/workflows/test_bash_script.yaml
+    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
     with:
-      script_name: "./shell_indent"
-      result_file: "./indent/sh.vim"
+      script_to_test: "./shell_indent"
+      result_file_to_check: "./indent/sh.vim"
 
   test-smart-tabs:
-    uses: ./.github/workflows/test_bash_script.yaml
+    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
     with:
-      script_name: "./smart_tabs"
-      result_file: "./plugin/smart_tabs.vim"
+      script_to_test: "./smart_tabs"
+      result_file_to_check: "./plugin/smart_tabs.vim"
