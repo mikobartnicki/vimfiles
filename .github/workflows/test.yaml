@@ -1,3 +1,11 @@
+# Tests the correctness of Vim/gVim configuration files and the execution of
+# optional shell scripts.
+#
+# Latest revision: 2026-03-05
+#
+# Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
+# please read UNLICENSE file for details.
+
 name: Test
 
 on:
@@ -6,35 +14,35 @@ on:
 
 jobs:
   test-vimrc:
-    uses: mikobartnicki/actions/.github/workflows/command_test.yaml@main
+    uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
       command_to_test: vim -u ./vimrc -e -c 'q'
 
   test-gvimrc:
-    uses: mikobartnicki/actions/.github/workflows/command_test.yaml@main
+    uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
       command_to_test: vim -u ./gvimrc -e -c 'q'
 
   test-polish-spell:
-    uses: ./.github/workflows/test_bash_script.yaml
+    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
     with:
-      script_name: "./polish_spell"
-      result_file: "./spell/pl.utf-8.spl"
+      script_to_test: "./polish_spell"
+      expected_file: "./spell/pl.utf-8.spl"
 
   test-retrobox-scheme:
-    uses: ./.github/workflows/test_bash_script.yaml
+    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
     with:
-      script_name: "./retrobox_scheme"
-      result_file: "./colors/retrobox.vim"
+      script_to_test: "./retrobox_scheme"
+      expected_file: "./colors/retrobox.vim"
 
   test-shell-indent:
-    uses: ./.github/workflows/test_bash_script.yaml
+    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
     with:
-      script_name: "./shell_indent"
-      result_file: "./indent/sh.vim"
+      script_to_test: "./shell_indent"
+      expected_file: "./indent/sh.vim"
 
   test-smart-tabs:
-    uses: ./.github/workflows/test_bash_script.yaml
+    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
     with:
-      script_name: "./smart_tabs"
-      result_file: "./plugin/smart_tabs.vim"
+      script_to_test: "./smart_tabs"
+      expected_file: "./plugin/smart_tabs.vim"
