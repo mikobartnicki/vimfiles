@@ -1,3 +1,11 @@
+# Tests the correctness of Vim/gVim configuration files and the execution of
+# optional shell scripts.
+#
+# Latest revision: 2026-03-05
+#
+# Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
+# please read UNLICENSE file for details.
+
 name: Test
 
 on:
