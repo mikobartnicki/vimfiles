@@ -1,7 +1,7 @@
 # Tests the correctness of Vim/gVim configuration files and the execution of
 # optional shell scripts.
 #
-# Latest revision: 2026-03-05
+# Latest revision: 2026-03-06
 #
 # Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 # please read UNLICENSE file for details.
@@ -24,25 +24,29 @@ jobs:
       command_to_test: vim -u ./gvimrc -e -c 'q'
 
   test-polish-spell:
-    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
+    uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
-      script_to_test: "./polish_spell"
-      expected_file: "./spell/pl.utf-8.spl"
+      command_to_test: ./polish_spell
+      is_script: true
+      expected_file: ./spell/pl.utf-8.spl
 
   test-retrobox-scheme:
-    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
+    uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
-      script_to_test: "./retrobox_scheme"
-      expected_file: "./colors/retrobox.vim"
+      command_to_test: ./retrobox_scheme
+      is_script: true
+      expected_file: ./colors/retrobox.vim
 
   test-shell-indent:
-    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
+    uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
-      script_to_test: "./shell_indent"
-      expected_file: "./indent/sh.vim"
+      command_to_test: ./shell_indent
+      is_script: true
+      expected_file: ./indent/sh.vim
 
   test-smart-tabs:
-    uses: mikobartnicki/actions/.github/workflows/test_shell_script.yaml@main
+    uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
-      script_to_test: "./smart_tabs"
-      expected_file: "./plugin/smart_tabs.vim"
+      command_to_test: ./smart_tabs
+      is_script: true
+      expected_file: ./plugin/smart_tabs.vim
