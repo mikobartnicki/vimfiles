@@ -1,50 +1,50 @@
 # Tests the correctness of Vim/gVim configuration files and the execution of
 # optional shell scripts.
 #
-# Latest revision: 2025-03-06
+# Latest revision: 2025-03-08
 #
 # Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 # please read UNLICENSE file for details.
 
-name: Test
+name: Test config and scripts
 
 on:
   push:
   pull_request:
 
 jobs:
-  test-vimrc:
+  vimrc:
     uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
       command_to_test: vim -u ./vimrc -e -c 'q'
 
-  test-gvimrc:
+  gvimrc:
     uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
       command_to_test: vim -u ./gvimrc -e -c 'q'
 
-  test-polish-spell:
+  polish-spell:
     uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
       command_to_test: ./polish_spell
       is_script: true
       expected_file: ./spell/pl.utf-8.spl
 
-  test-retrobox-scheme:
+  retrobox-scheme:
     uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
       command_to_test: ./retrobox_scheme
       is_script: true
       expected_file: ./colors/retrobox.vim
 
-  test-shell-indent:
+  shell-indent:
     uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
       command_to_test: ./shell_indent
       is_script: true
       expected_file: ./indent/sh.vim
 
-  test-smart-tabs:
+  smart-tabs:
     uses: mikobartnicki/actions/.github/workflows/test_shell_command.yaml@main
     with:
       command_to_test: ./smart_tabs
