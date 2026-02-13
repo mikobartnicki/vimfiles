@@ -12,13 +12,13 @@ Working Git installation available from command line is necessary.
 
 Clone the whole repository into `~/vimfiles` directory:
 
-    git clone git@github.com:mikobartnicki/vimfiles ~/vimfiles
+    git clone git@github.com:mikobartnicki/vimfiles.git ~/vimfiles
 
 ### Linux
 
 Clone the whole repository into `~/.vim` directory:
 
-    git clone git@github.com:mikobartnicki/vimfiles ~/.vim
+    git clone git@github.com:mikobartnicki/vimfiles.git ~/.vim
 
 That's it, done!
 
