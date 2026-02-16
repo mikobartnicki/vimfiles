@@ -3,7 +3,7 @@
 " Shared non-GUI settings for both console Vim and gVim. Additional
 " GUI-specific settings are in the 'gvimrc' file.
 "
-" Latest revision: 2026-02-13
+" Latest revision: 2026-02-16
 "
 " Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 " please read UNLICENSE file for details.
@@ -116,6 +116,9 @@ if has("autocmd")
 
     " Wrap lines at 72nd column in alpine e-mail client.
     autocmd BufNewFile,BufReadPre /tmp/pico.* setlocal textwidth=72
+
+    " Use 2 spaces for code indentation in HTML files.
+    autocmd FileType html setlocal et ts=2 sts=2 sw=2
 
     " Use 2 spaces for code indentation in YAML files.
     autocmd FileType yaml setlocal et ts=2 sts=2 sw=2
